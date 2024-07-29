@@ -1,5 +1,12 @@
 CREATE TABLE users (
   id SERIAL,
-  name VARCHAR(255) NOT NULL,
-  PRIMARY KEY (id)
+  name VARCHAR(50) NOT NULL,
+  kana VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  password VARCHAR(15) NOT NULL,
+  image VARCHAR(255),
+  created_at TIMESTAMP(0) WITH TIME ZONE NOT NULL,
+  updated_at TIMESTAMP(0) WITH TIME ZONE NOT NULL,
+  is_active BOOLEAN DEFAULT true,
+  CONSTRAINT pk_id PRIMARY KEY(id)
 );

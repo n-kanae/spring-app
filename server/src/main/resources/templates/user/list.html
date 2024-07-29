@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+  <title>ユーザー管理</title>
+</head>
+<body>
+  <h2>ユーザー管理</h2>
+  <!-- Flashメッセージの表示 -->
+  <p th:if="${errorMessage}" th:text="${errorMessage}" style="color: red;">
+        エラーメッセージ
+    </p>
+  <table border="1" width="300">
+    <thead>
+      <tr>
+        <th>アイコン</th>
+        <th>氏名</th>
+        <th>かな</th>
+        <th>詳細</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="user : ${users}">
+        <td th:text="${user.image}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.kana}"></td>
+        <td>
+          <a th:href="@{/users/{id}(id=${user.id})}">
+            詳細
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
