@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+  <title>ホーム</title>
+</head>
+<body>
+  <h2>ホーム画面</h2>
+  <menu>
+    <a th:href="@{/}">ホーム</a>
+    <a th:href="@{/chat}">チャット</a>
+    <a th:href="@{/file}">ファイル</a>
+    <a th:href="@{/data}">データ</a>
+    <a th:href="@{/users}">ユーザー管理</a>
+  </menu>
+  <div sec:authentication="name">
+    ログイン情報のname値に書き換わる
+  </div>
+  <div sec:authorize="isAuthenticated()">
+    認証されたユーザーにのみ表示
+  </div>
+  <menu>
+    <a th:href="@{/notice/all}">すべて</a>
+    <a th:href="@{/notice/mention}">@メンション</a>
+    <a th:href="@{/notice/file}">ファイル</a>
+  </menu>
+  <form th:action="@{/logout}" method="post">
+    <input type="submit" value="ログアウト">
+</body>
+</html>

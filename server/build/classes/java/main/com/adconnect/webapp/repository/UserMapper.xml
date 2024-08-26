@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.adconnect.webapp.repository.UserMapper">
+    <!-- 全件検索 -->
+    <select id="selectAll" resultType="com.adconnect.webapp.entity.User">
+        SELECT id, name, kana, email, image, created_at as createdAt,
+        updated_at as updatedAt FROM users
+    </select>
+    <!-- １件検索 -->
+    <select id="selectById" resultType="com.adconnect.webapp.entity.User">
+        SELECT id, name, kana, email, image, created_at as createdAt,
+        updated_at as updatedAt FROM users WHERE id = #{id}
+    </select>
+    <!-- 登録 -->
+    <insert id="insert" parameterType="com.adconnect.webapp.entity.User">
+	    INSERT INTO users (name, kana, email, password, image, created_at, updated_at, is_active)
+	    VALUES
+	    (#{name}, #{kana}, #{email}, #{password}, #{image}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, true)
+    </insert>
+    <!-- 更新 -->
+    <update id="update" parameterType="com.adconnect.webapp.entity.User">
+	    UPDATE users SET name = #{name}, kana = #{kana}, email= #{email}, password = #{password}, image = #{image},
+	    updated_at = CURRENT_TIMESTAMP WHERE id = #{id}
+    </update>
+    <!-- 削除 -->
+    <delete id="delete">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+</mapper>
