@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Role {
     private Integer id;
-    private String role_name;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
-    private Boolean is_active;
+    private String roleName;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private Boolean isActive;
 }

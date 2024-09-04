@@ -23,7 +23,7 @@
         <td th:text="${user.image}"></td>
         <td th:text="${user.name}"></td>
         <td th:text="${user.kana}"></td>
-        <td th:text="${user.roleName}"></td>
+        <td th:text="${user.role.roleName}"></td>
         <td>
           <a th:href="@{/users/{id}(id=${user.id})}">
             詳細

@@ -1,7 +1,6 @@
 package com.adconnect.webapp.entity;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,8 +16,8 @@ public class User {
     private String email;
     private String password;
     private String image;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
-    private Boolean is_active;
-    private RoleUser roleUser;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private Boolean isActive;
+    private Role role;
 }

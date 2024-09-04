@@ -13,7 +13,7 @@ public class RoleAbility {
     private Integer id;
     private Integer roleId;
     private Integer abilityId;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
-    private Boolean is_active;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private Boolean isActive;
 }
